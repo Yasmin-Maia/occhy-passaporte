@@ -1,0 +1,9 @@
+body{margin:0;background:#0B0B0B;color:#fff;font-family:-apple-system,sans-serif}
+.app{max-width:430px;margin:auto;padding:24px;min-height:100vh;display:flex;flex-direction:column}
+header h1{text-align:center;font-family:Georgia,serif;letter-spacing:8px;margin:30px 0 6px}
+header p{text-align:center;color:#999;letter-spacing:3px;font-size:12px;margin-bottom:30px}
+.novo{background:#E9E2D7;color:#000;border:none;border-radius:999px;padding:16px;font-weight:600}
+.lista{display:flex;flex-direction:column;gap:14px;flex:1;margin-top:24px}
+.cliente{display:flex;justify-content:space-between;align-items:center;background:#161616;border-radius:22px;padding:18px}
+.cliente span{color:#999;font-size:13px}
+nav{display:flex;justify-content:space-around;border-top:1px solid #222;padding-top:18px;margin-top:24px;color:#ddd}
