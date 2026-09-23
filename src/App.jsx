@@ -1,31 +1,6 @@
-import { useState } from 'react';
-
-export default function App() {
-  const [clientes] = useState([]);
-
-  return (
-    <div className="app">
-      <header>
-        <h1>OCCHY</h1>
-        <p>Passaporte Digital</p>
-      </header>
-
-      <button className="novo">+ Nova Cliente</button>
-
-      <div className="lista">
-        <div className="cliente">
-          <div>
-            <h3>Nenhuma cliente cadastrada</h3>
-            <span>Toque em Nova Cliente para começar.</span>
-          </div>
-        </div>
-      </div>
-
-      <nav>
-        <span>Clientes</span>
-        <span>Hoje</span>
-        <span>Perfil</span>
-      </nav>
-    </div>
-  );
+import {useState} from 'react';
+export default function App(){
+const [pin,setPin]=useState('');const [ok,setOk]=useState(false);const [clientes,setClientes]=useState([]);const [novo,setNovo]=useState('');
+if(!ok)return <div className='login'><h1>OCCHY</h1><p>Passaporte Digital</p><input type='password' maxLength='6' value={pin} onChange={e=>setPin(e.target.value)} placeholder='PIN'/><button onClick={()=>pin==='123456'&&setOk(true)}>Entrar</button><small>PIN inicial: 123456</small></div>;
+return <div className='app'><header><h1>OCCHY</h1><p>Passaporte Digital</p></header><div className='bar'><input placeholder='Pesquisar cliente...'/></div><div className='bar'><input value={novo} onChange={e=>setNovo(e.target.value)} placeholder='Nome da nova cliente'/><button className='novo' onClick={()=>{if(novo.trim()){setClientes([...clientes,{nome:novo.trim(),restante:'0 sessões'}]);setNovo('')}}}>+ Nova Cliente</button></div><div className='lista'>{clientes.length===0?<div className='cliente'><div><h3>Nenhuma cliente cadastrada</h3><span>Começa pelo primeiro cadastro.</span></div></div>:clientes.map((c,i)=><div key={i} className='cliente'><div><h3>{c.nome}</h3><span>{c.restante}</span></div><b>›</b></div>)}</div><nav><span>Clientes</span><span>Hoje</span><span>Perfil</span></nav></div>
 }
