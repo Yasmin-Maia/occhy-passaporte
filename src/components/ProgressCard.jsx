@@ -1,1 +1,1 @@
-1
+export default function ProgressCard({c,onOpen}){const p=Math.round((c.usadas/c.total)*100);return <div className='cliente'><div style={{flex:1}}><h3>{c.nome}</h3><span>{c.pacote} • {c.usadas}/{c.total}</span><div className='bar'><div className='fill' style={{width:`${p}%`}}/></div></div><button className='sessao' onClick={onOpen}>Abrir</button></div>}
