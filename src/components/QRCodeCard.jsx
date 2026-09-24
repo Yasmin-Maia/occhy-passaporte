@@ -1,0 +1,1 @@
+export default function QRCodeCard({nome,pacote,restantes}){return <div className='pass'><div className='qr'/><h3>{nome||'Passaporte Digital'}</h3><span>{pacote||'Sem pacote'}</span><strong>{restantes} sessões restantes</strong></div>}
